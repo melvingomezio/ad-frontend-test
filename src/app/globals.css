@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" prefix(ad);
 
 @theme {
   --color-primary-000: #FFFFFF;   /* Main background */

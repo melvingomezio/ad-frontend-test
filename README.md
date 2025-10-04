@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GameStore - Domain-Driven Clean Architecture
 
-## Getting Started
+Game catalog application built with Next.js following Clean Architecture and Domain-Driven Design principles.
 
-First, run the development server:
+## Architecture
+
+### Domain-Based Structure
+
+```
+src/app/
+├── core/                    # Business Logic
+│   ├── catalog/            # Catalog Domain
+│   │   ├── application/    # Use cases
+│   │   ├── domain/        # Entities and types
+│   │   └── infrastructure/ # Services and interfaces
+│   └── cart/              # Cart Domain
+│       ├── application/   # Use cases
+│       ├── domain/       # Entities and types
+│       └── infrastructure/ # Services and interfaces
+└── journeys/              # User Journeys (UI)
+    ├── shared/           # Shared components
+    ├── catalog/          # Catalog journey
+    └── cart/            # Cart journey
+```
+
+### Implemented Principles
+
+- **Clean Architecture**: Layer separation with inward dependencies
+- **Domain-Driven Design**: Organization by business domains
+- **Functional Programming**: Use cases as pure functions
+- **Atomic Design**: Components organized by complexity
+
+## Features
+
+- Game catalog with genre filters
+- Pagination with "See More"
+- Persistent cart in localStorage
+- Responsive design with TailwindCSS
+- Unit testing
+- Page navigation
+- CI/CD with GitHub Actions
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm test
+```
 
-## Learn More
+The test suite maintains a minimum coverage of 95% across all code, ensuring high code quality and reliability.
 
-To learn more about Next.js, take a look at the following resources:
+## CI/CD Pipeline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application uses GitHub Actions for continuous integration and deployment:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Automated Testing**: Runs unit tests on every push and pull request
+- **Code Quality**: Linting and type checking
+- **Automatic Deployment**: Deploys to Vercel on successful builds
 
-## Deploy on Vercel
+Workflow configuration can be found in `.github/workflows/deploy.yml`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy on [Vercel](https://vercel.com/new) by connecting your GitHub repository. The CI/CD pipeline will automatically handle deployments on push to main branch.
