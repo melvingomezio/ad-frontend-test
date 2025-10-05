@@ -1,4 +1,4 @@
-@import "tailwindcss" prefix(ad);
+@import "tailwindcss";
 
 @theme {
   --color-primary-000: #FFFFFF;   /* Main background */
@@ -24,10 +24,13 @@
   --spacing-8: 32px;
   --spacing-12: 48px;
 
-  --text-base: 16px;  /* Base text (paragraphs) */
-  --text-lg: 20px;    /* Small headings */
-  --text-xl: 24px;    /* Medium headings */
-  --text-2xl: 36px;   /* Large headings */
+  --font-size-base: 16px;  /* Base text (paragraphs) */
+  --font-size-h2: 24px;    /* H2 headings */
+  --font-size-h1: 36px;    /* H1 headings */
+
+  --line-height-h1: 40px;
+  --line-height-h2: 24px;
+  --letter-spacing-heading: 0.4px;
 
   --radius-lg: 8px;
   --radius-2xl: 16px;
@@ -38,6 +41,118 @@ body {
   font-family: var(--font-family-sans);  /* Main font */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading);  /* Font for headings */
+h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+}
+
+@layer utilities {
+  /* Heading variants */
+  .text-h1 {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+  }
+  
+  .text-h2 {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+  
+  /* Subtitle variants */
+  .text-s1 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.4px;
+  }
+  
+  .text-s2 {
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+  }
+  
+  .text-s3 {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+  
+  /* Body variants */
+  .text-b1 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+  
+  .text-b2 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+  
+  .text-b3 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
+  
+  /* Badge */
+  .badge {
+    width: 57px;
+    height: 32px;
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+  
+  /* Button variants */
+  .btn-filled {
+    padding: var(--spacing-3) var(--spacing-4);
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+  }
+  
+  .btn-outlined {
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 1px solid;
+    border-radius: var(--radius-lg);
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  /* Input */
+  .input {
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 1px solid;
+    border-radius: var(--radius-lg);
+    outline: none;
+  }
+  
+  /* Icon */
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card */
+  .card {
+    padding: var(--spacing-4);
+    border: 1px solid;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+  }
 }
