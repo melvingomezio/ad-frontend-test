@@ -1,10 +1,10 @@
 import { Theme } from '@/app/journeys/shared/types';
-import { ReactNode } from 'react';
 
-export type ButtonProps = {
-  children: ReactNode;
+export type TextButtonProps = {
+  variant: 'btn-filled' | 'btn-outlined';
+  text: string;
   onClick?: () => void;
-  disabled?: boolean;
+  disabled?: boolean;  
   backgroundColor?: keyof Theme['colors'];
   borderColor?: keyof Theme['colors'];
   color?: keyof Theme['colors'];

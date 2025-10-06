@@ -8,6 +8,7 @@ export const Input: React.FC<InputProps> = ({
   value,
   onChange,
   disabled,
+  readOnly,
   backgroundColor,
   borderColor,
   color,
@@ -26,6 +27,7 @@ export const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       disabled={disabled}
+      readOnly={readOnly}
       style={customStyles}
     />
   );

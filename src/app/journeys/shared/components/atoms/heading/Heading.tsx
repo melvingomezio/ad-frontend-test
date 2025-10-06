@@ -7,6 +7,7 @@ export const Heading: React.FC<HeadingProps> = ({
   children,
   fontWeight,
   color,
+  className = '',
 }) => {
   const Component = variant;
   const customStyles = {
@@ -14,5 +15,5 @@ export const Heading: React.FC<HeadingProps> = ({
     ...(color && { color: colorMap[color] }),
   };
 
-  return <Component style={customStyles}>{children}</Component>;
+  return <Component className={className} style={customStyles}>{children}</Component>;
 };

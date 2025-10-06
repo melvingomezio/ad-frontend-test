@@ -7,11 +7,12 @@ export const Body: React.FC<BodyProps> = ({
   children,
   fontWeight,
   color,
+  className = '',
 }) => {
   const customStyles = {
     ...(fontWeight && { fontWeight: fontWeightMap[fontWeight] }),
     ...(color && { color: colorMap[color] }),
-  };
+  };  
 
-  return <p className={variant} style={customStyles}>{children}</p>;
+  return <p className={`${variant} ${className}`} style={customStyles}>{children}</p>;
 };

@@ -3,7 +3,6 @@ import { ButtonProps } from "./resources/button.config";
 import { colorMap } from "@/app/journeys/shared/utils/theme-maps";
 
 export const Button: React.FC<ButtonProps> = ({
-  variant,
   children,
   onClick,
   disabled,
@@ -15,11 +14,12 @@ export const Button: React.FC<ButtonProps> = ({
     ...(backgroundColor && { backgroundColor: colorMap[backgroundColor] }),
     ...(borderColor && { borderColor: colorMap[borderColor] }),
     ...(color && { color: colorMap[color] }),
+    borderRadius: 'var(--radius-lg)',
   };
 
   return (
     <button 
-      className={variant} 
+      className="button w-full" 
       style={customStyles} 
       onClick={onClick}
       disabled={disabled}

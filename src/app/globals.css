@@ -15,15 +15,6 @@
   --font-family-sans: "Archivo", ui-sans-serif, system-ui;
   --font-family-heading: "Archivo", sans-serif;
   
-  --spacing-0: 0;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-12: 48px;
-
   --font-size-base: 16px;  /* Base text (paragraphs) */
   --font-size-h2: 24px;    /* H2 headings */
   --font-size-h1: 36px;    /* H1 headings */
@@ -31,9 +22,6 @@
   --line-height-h1: 40px;
   --line-height-h2: 24px;
   --letter-spacing-heading: 0.4px;
-
-  --radius-lg: 8px;
-  --radius-2xl: 16px;
 }
 body {
   background: var(--color-primary-000);  /* Main background */
@@ -60,19 +48,6 @@ h3, h4, h5, h6 {
 }
 
 @layer utilities {
-  /* Heading variants */
-  .text-h1 {
-    font-size: 36px;
-    line-height: 40px;
-    letter-spacing: 0.4px;
-  }
-  
-  .text-h2 {
-    font-size: 24px;
-    line-height: 24px;
-    letter-spacing: 0.4px;
-  }
-  
   /* Subtitle variants */
   .text-s1 {
     font-size: 24px;
@@ -115,44 +90,51 @@ h3, h4, h5, h6 {
   .badge {
     width: 57px;
     height: 32px;
-    padding: var(--spacing-2) var(--spacing-3);
+    padding: 8px 12px;
   }
   
   /* Button variants */
   .btn-filled {
-    padding: var(--spacing-3) var(--spacing-4);
+    padding: 12px 16px;
     border: none;
-    border-radius: var(--radius-lg);
+    border-radius: 8px;
     cursor: pointer;
   }
   
   .btn-outlined {
-    padding: var(--spacing-3) var(--spacing-4);
-    border: 1px solid;
-    border-radius: var(--radius-lg);
+    padding: 20px 16px;
+    border: 1px solid var(--color-primary-800);
+    border-radius: 8px;
     background: transparent;
     cursor: pointer;
   }
   
   /* Input */
   .input {
-    padding: var(--spacing-3) var(--spacing-4);
+    padding: 12px 16px;
     border: 1px solid;
-    border-radius: var(--radius-lg);
+    border-radius: 8px;
     outline: none;
   }
   
-  /* Icon */
-  .icon {
-    width: 24px;
-    height: 24px;
+  /* Card */
+  .card {    
+    border: 0.5px solid var(--color-primary-400);
+    border-radius: 8px;
+    cursor: pointer;
   }
   
-  /* Card */
-  .card {
-    padding: var(--spacing-4);
-    border: 1px solid;
-    border-radius: var(--radius-lg);
-    cursor: pointer;
+  /* Summary Divider */
+  .summary-divider {
+    border-top: 1px solid var(--color-primary-400);
+  }
+
+  .divider {
+    border-top: 1px solid var(--color-primary-400);
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--color-primary-300);
   }
 }
