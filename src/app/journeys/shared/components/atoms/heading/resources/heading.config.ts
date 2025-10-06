@@ -6,4 +6,5 @@ export type HeadingProps = {
   children: ReactNode;
   fontWeight?: keyof Theme['fonts']['fontWeight'];
   color?: keyof Theme['colors'];
+  className?: string;
 };

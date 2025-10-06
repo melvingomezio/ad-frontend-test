@@ -8,10 +8,10 @@ describe('Icon', () => {
     expect(icon).toBeInTheDocument();
   });
 
-  it('applies icon class', () => {
+  it('applies Tailwind classes', () => {
     render(<Icon src="/icon.svg" alt="Icon" />);
     const icon = screen.getByAltText('Icon');
-    expect(icon).toHaveClass('icon');
+    expect(icon).toHaveClass('w-6', 'h-6');
   });
 
   it('renders with different alt values', () => {
