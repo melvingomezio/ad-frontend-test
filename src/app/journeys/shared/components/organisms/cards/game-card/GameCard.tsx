@@ -3,6 +3,7 @@ import { Card } from "../../../atoms/card/Card";
 import { Image } from "../../../atoms/image/Image";
 import { Subtitle } from "../../../atoms/subtitle/Subtitle";
 import { TextButton } from "../../../molecules/buttons/text-button/TextButton";
+import { Badge } from "../../../atoms/badge/Badge";
 import { GameCardProps } from "./resources/game-card.config";
 import { Body } from "../../../atoms";
 
@@ -13,7 +14,8 @@ export const GameCard: React.FC<GameCardProps> = ({
   title,
   price,
   buttonText,
-  onButtonClick, 
+  onButtonClick,
+  isNew,
 }) => {
   return (
     <Card className="card">
@@ -22,12 +24,30 @@ export const GameCard: React.FC<GameCardProps> = ({
           <div className="h-60 overflow-hidden relative">
             <Image
               src={imageSrc}
-              alt={imageAlt}                            
+              alt={imageAlt}
               objectFit="cover"
               className="w-full h-full rounded-t-2xl"
             />
+            {isNew && (
+              <div className="absolute top-3 left-3">
+                <Badge backgroundColor="primary100">
+                  <Subtitle
+                    variant="text-s3"
+                    fontWeight="regular"
+                    color="primary800"
+                  >
+                    New
+                  </Subtitle>
+                </Badge>
+              </div>
+            )}
           </div>
-          <Subtitle className="mt-5" variant="text-s3" color="primary500" fontWeight="bold">
+          <Subtitle
+            className="mt-5"
+            variant="text-s3"
+            color="primary500"
+            fontWeight="bold"
+          >
             {genre}
           </Subtitle>
 

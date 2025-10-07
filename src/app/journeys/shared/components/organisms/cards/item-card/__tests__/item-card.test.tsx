@@ -46,4 +46,16 @@ describe('ItemCard', () => {
     expect(screen.getByText('The Witcher 3')).toBeInTheDocument();
     expect(screen.getByAltText('Close')).toBeInTheDocument();
   });
+
+  it('shows New badge when isNew is true', () => {
+    render(<ItemCard {...defaultProps} isNew={true} />);
+    
+    expect(screen.getByText('New')).toBeInTheDocument();
+  });
+
+  it('does not show New badge when isNew is false', () => {
+    render(<ItemCard {...defaultProps} isNew={false} />);
+    
+    expect(screen.queryByText('New')).not.toBeInTheDocument();
+  });
 });

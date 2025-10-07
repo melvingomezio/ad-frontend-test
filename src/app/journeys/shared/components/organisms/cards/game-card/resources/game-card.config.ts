@@ -6,4 +6,5 @@ export type GameCardProps = {
   price: string;
   buttonText: string;
   onButtonClick?: () => void;
+  isNew?: boolean;
 };
