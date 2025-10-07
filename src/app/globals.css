@@ -91,6 +91,7 @@ h3, h4, h5, h6 {
     width: 3.5625rem;
     height: 2rem;
     padding: 0.5rem 0.75rem;
+    border-radius: 4px;
   }
   
   /* Button variants */
@@ -148,5 +149,12 @@ h3, h4, h5, h6 {
   /* Filter divider */
   .filter-divider {    
     background-color: var(--color-primary-800)
+  }
+
+  /* Alert */
+  .alert-success {
+    background-color: var(--color-primary-600);
+    color: var(--color-primary-000);
+    border: 1px solid var(--color-primary-700);
   }
 }

@@ -8,4 +8,5 @@ export type ItemCardProps = {
   closeIconSrc: string;
   closeIconAlt?: string;
   onCloseClick?: () => void;
+  isNew?: boolean;
 };

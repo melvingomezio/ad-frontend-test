@@ -1,5 +1,9 @@
 import { CatalogService } from '../../infrastructure';
 
+jest.mock('../../../shared', () => ({
+  API_URL: 'http://localhost:3000'
+}));
+
 global.fetch = jest.fn();
 
 describe('CatalogService', () => {
@@ -33,7 +37,7 @@ describe('CatalogService', () => {
 
     const result = await CatalogService.getCatalog();
 
-    expect(fetch).toHaveBeenCalledWith('/api/games?');
+    expect(fetch).toHaveBeenCalledWith('http://localhost:3000/api/games?');
     expect(result).toEqual(mockResponse);
   });
 
@@ -52,7 +56,7 @@ describe('CatalogService', () => {
 
     await CatalogService.getCatalog('Action', 1);
 
-    expect(fetch).toHaveBeenCalledWith('/api/games?genre=Action&page=1');
+    expect(fetch).toHaveBeenCalledWith('http://localhost:3000/api/games?genre=Action&page=1');
   });
 
   it('should throw error when fetch fails', async () => {

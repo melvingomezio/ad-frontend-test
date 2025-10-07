@@ -36,4 +36,16 @@ describe('GameCard', () => {
     expect(screen.getByText('Action')).toBeInTheDocument();
     expect(screen.getByText('Super Game')).toBeInTheDocument();
   });
+
+  it('shows New badge when isNew is true', () => {
+    render(<GameCard {...defaultProps} isNew={true} />);
+    
+    expect(screen.getByText('New')).toBeInTheDocument();
+  });
+
+  it('does not show New badge when isNew is false', () => {
+    render(<GameCard {...defaultProps} isNew={false} />);
+    
+    expect(screen.queryByText('New')).not.toBeInTheDocument();
+  });
 });

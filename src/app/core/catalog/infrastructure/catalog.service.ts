@@ -1,3 +1,4 @@
+import { API_URL } from "../../shared";
 import { CatalogRepository } from "./catalog.interface";
 
 export const CatalogService: CatalogRepository = {
@@ -6,7 +7,7 @@ export const CatalogService: CatalogRepository = {
     if (genre) params.append('genre', genre);
     if (page) params.append('page', page.toString());
     
-    const response = await fetch(`/api/games?${params.toString()}`);
+    const response = await fetch(`${API_URL}/api/games?${params.toString()}`);
     if (!response.ok) {
       throw new Error('Failed to fetch games');
     }
