@@ -47,4 +47,39 @@ describe('Dropdown', () => {
     
     expect(screen.queryByText('Option 1')).not.toBeInTheDocument();
   });
+
+  it('closes when clicking outside', () => {
+    render(<Dropdown options={mockOptions} />);
+    
+    fireEvent.click(screen.getByRole('textbox'));
+    expect(screen.getByText('Option 1')).toBeInTheDocument();
+    
+    fireEvent.mouseDown(document.body);
+    expect(screen.queryByText('Option 1')).not.toBeInTheDocument();
+  });
+
+  it('applies custom styles', () => {
+    render(
+      <Dropdown 
+        options={mockOptions} 
+        backgroundColor="primary600" 
+        borderColor="primary600" 
+        color="primary600" 
+      />
+    );
+    
+    fireEvent.click(screen.getByRole('textbox'));
+    const dropdown = document.querySelector('.fixed');
+    expect(dropdown).toBeInTheDocument();
+  });
+
+  it('handles toggle when already open', () => {
+    render(<Dropdown options={mockOptions} />);
+    
+    fireEvent.click(screen.getByRole('textbox'));
+    expect(screen.getByText('Option 1')).toBeInTheDocument();
+    
+    fireEvent.click(screen.getByRole('textbox'));
+    expect(screen.queryByText('Option 1')).not.toBeInTheDocument();
+  });
 });

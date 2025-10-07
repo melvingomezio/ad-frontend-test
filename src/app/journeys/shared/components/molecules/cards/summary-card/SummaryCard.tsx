@@ -13,7 +13,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
   const orderTotal = items.reduce((total, item) => total + item.price, 0);
 
   return (
-    <Card>
+    <Card className="card">
       <div className="px-6 py-8">
         <Subtitle variant="text-s1" fontWeight="bold" color={color}>
           {title}

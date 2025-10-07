@@ -8,6 +8,7 @@ export const Image: React.FC<ImageProps> = ({
   width,
   height,
   objectFit = 'cover',
+  className,
 }) => {
   return (
     <NextImage
@@ -16,6 +17,7 @@ export const Image: React.FC<ImageProps> = ({
       width={typeof width === 'number' ? width : 100}
       height={typeof height === 'number' ? height : 100}
       style={{ objectFit }}
+      className={className}
     />
   );
 };

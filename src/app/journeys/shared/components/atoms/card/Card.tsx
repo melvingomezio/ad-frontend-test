@@ -7,6 +7,7 @@ export const Card: React.FC<CardProps> = ({
   backgroundColor,
   borderColor,
   onClick,
+  className = '',
 }) => {
   const customStyles = {
     ...(backgroundColor && { backgroundColor: colorMap[backgroundColor] }),
@@ -14,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div className="card" style={customStyles} onClick={onClick}>
+    <div className={className} style={customStyles} onClick={onClick}>
       {children}
     </div>
   );

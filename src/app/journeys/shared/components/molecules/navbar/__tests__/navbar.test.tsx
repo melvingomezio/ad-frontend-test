@@ -3,14 +3,14 @@ import { Navbar } from '../Navbar';
 
 describe('Navbar', () => {
   const defaultProps = {
-    text: 'GameStore',
+    text: 'GamerShop',
     iconSrc: '/icons/user.svg',
   };
 
   it('renders text and icon', () => {
     render(<Navbar {...defaultProps} />);
     
-    expect(screen.getByText('GameStore')).toBeInTheDocument();
+    expect(screen.getByText('GamerShop')).toBeInTheDocument();
     expect(screen.getByAltText('Icon')).toBeInTheDocument();
   });
 
@@ -18,7 +18,7 @@ describe('Navbar', () => {
     const mockOnTextClick = jest.fn();
     render(<Navbar {...defaultProps} onTextClick={mockOnTextClick} />);
     
-    fireEvent.click(screen.getByText('GameStore'));
+    fireEvent.click(screen.getByText('GamerShop'));
     expect(mockOnTextClick).toHaveBeenCalled();
   });
 
