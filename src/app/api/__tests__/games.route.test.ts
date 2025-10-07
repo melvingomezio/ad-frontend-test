@@ -51,6 +51,24 @@ describe('/api/games', () => {
     expect(data.games.every((game: { genre: string }) => game.genre === 'Action')).toBe(true);
   });
 
+  it('calculates totalPages based on filtered results', async () => {
+    const request = new Request('http://localhost:3000/api/games?genre=Action');
+    const response = await GET(request);
+    const data = await response.json();
+
+    expect(data.totalPages).toBe(1); // 2 Action games fit in 1 page (12 items per page)
+    expect(data.currentPage).toBe(1);
+  });
+
+  it('calculates totalPages correctly for all games', async () => {
+    const request = new Request('http://localhost:3000/api/games');
+    const response = await GET(request);
+    const data = await response.json();
+
+    expect(data.totalPages).toBe(1); // 3 games fit in 1 page (12 items per page)
+    expect(data.currentPage).toBe(1);
+  });
+
   it('handles pagination', async () => {
     const request = new Request('http://localhost:3000/api/games?page=2');
     const response = await GET(request);

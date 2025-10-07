@@ -40,6 +40,7 @@ describe('CatalogScreen', () => {
       loading: false,
       loadingMore: false,
       selectedGenre: '',
+      hasMorePages: true,
       handleGenreChange: mockHandleGenreChange,
       handleLoadMore: mockHandleLoadMore
     });
@@ -63,6 +64,7 @@ describe('CatalogScreen', () => {
       loading: true,
       loadingMore: false,
       selectedGenre: '',
+      hasMorePages: false,
       handleGenreChange: mockHandleGenreChange,
       handleLoadMore: mockHandleLoadMore
     });
@@ -104,6 +106,7 @@ describe('CatalogScreen', () => {
       loading: false,
       loadingMore: true,
       selectedGenre: '',
+      hasMorePages: true,
       handleGenreChange: mockHandleGenreChange,
       handleLoadMore: mockHandleLoadMore
     });
@@ -137,5 +140,21 @@ describe('CatalogScreen', () => {
     
     const cartIcon = screen.getByAltText('Icon');
     expect(cartIcon).toBeInTheDocument();
+  });
+
+  it('hides see more button when no more pages', () => {
+    (useCatalog as jest.Mock).mockReturnValue({
+      catalog: mockCatalog,
+      loading: false,
+      loadingMore: false,
+      selectedGenre: '',
+      hasMorePages: false,
+      handleGenreChange: mockHandleGenreChange,
+      handleLoadMore: mockHandleLoadMore
+    });
+
+    render(<CatalogScreen />);
+    
+    expect(screen.queryByText('SEE MORE')).not.toBeInTheDocument();
   });
 });

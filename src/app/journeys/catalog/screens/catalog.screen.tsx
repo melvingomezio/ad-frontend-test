@@ -21,6 +21,7 @@ export function CatalogScreen() {
     loading,
     loadingMore,
     selectedGenre,
+    hasMorePages,
     handleGenreChange,
     handleLoadMore
   } = useCatalog();
@@ -124,16 +125,18 @@ export function CatalogScreen() {
                   />
                 ))}
               </div>
-              <div className="flex justify-center mt-12 w-32">
-                <TextButton
-                  variant="btn-filled"
-                  color="primary000"
-                  backgroundColor="primary600"
-                  text={loadingMore ? "Loading..." : "SEE MORE"}
-                  disabled={loadingMore}
-                  onClick={handleLoadMore}
-                />
-              </div>
+              {hasMorePages && (
+                <div className="flex justify-center mt-12 w-32">
+                  <TextButton
+                    variant="btn-filled"
+                    color="primary000"
+                    backgroundColor="primary600"
+                    text={loadingMore ? "Loading..." : "SEE MORE"}
+                    disabled={loadingMore}
+                    onClick={handleLoadMore}
+                  />
+                </div>
+              )}
             </>
           )}
         </div>
