@@ -4,4 +4,5 @@ export type ImageProps = {
   width?: number;
   height?: number;
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+  className?: string;
 };

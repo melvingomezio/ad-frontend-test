@@ -6,4 +6,5 @@ export type CardProps = {
   backgroundColor?: keyof Theme['colors'];
   borderColor?: keyof Theme['colors'];
   onClick?: () => void;
+  className?: string;
 };

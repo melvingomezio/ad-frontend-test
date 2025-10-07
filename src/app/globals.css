@@ -15,13 +15,13 @@
   --font-family-sans: "Archivo", ui-sans-serif, system-ui;
   --font-family-heading: "Archivo", sans-serif;
   
-  --font-size-base: 16px;  /* Base text (paragraphs) */
-  --font-size-h2: 24px;    /* H2 headings */
-  --font-size-h1: 36px;    /* H1 headings */
+  --font-size-base: 1rem;     /* Base text (paragraphs) */
+  --font-size-h2: 1.5rem;     /* H2 headings */
+  --font-size-h1: 2.25rem;    /* H1 headings */
 
-  --line-height-h1: 40px;
-  --line-height-h2: 24px;
-  --letter-spacing-heading: 0.4px;
+  --line-height-h1: 2.5rem;
+  --line-height-h2: 1.5rem;
+  --letter-spacing-heading: 0.025rem;
 }
 body {
   background: var(--color-primary-000);  /* Main background */
@@ -50,78 +50,75 @@ h3, h4, h5, h6 {
 @layer utilities {
   /* Subtitle variants */
   .text-s1 {
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: 0.4px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.025rem;
   }
   
   .text-s2 {
-    font-size: 18px;
-    line-height: 20px;
-    letter-spacing: 0.4px;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.025rem;
   }
   
   .text-s3 {
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.025rem;
   }
   
   /* Body variants */
   .text-b1 {
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.4px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
   }
   
   .text-b2 {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0.4px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
   }
   
   .text-b3 {
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0rem;
   }
   
   /* Badge */
   .badge {
-    width: 57px;
-    height: 32px;
-    padding: 8px 12px;
+    width: 3.5625rem;
+    height: 2rem;
+    padding: 0.5rem 0.75rem;
   }
   
   /* Button variants */
   .btn-filled {
-    padding: 12px 16px;
+    padding: 1.25rem 1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
   }
   
   .btn-outlined {
-    padding: 20px 16px;
+    padding: 1.25rem 1rem;
     border: 1px solid var(--color-primary-800);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background: transparent;
     cursor: pointer;
   }
   
   /* Input */
   .input {
-    padding: 12px 16px;
-    border: 1px solid;
-    border-radius: 8px;
+    padding: 0.75rem 1rem;   
     outline: none;
   }
   
   /* Card */
   .card {    
     border: 0.5px solid var(--color-primary-400);
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 1rem;
   }
   
   /* Summary Divider */
@@ -136,5 +133,20 @@ h3, h4, h5, h6 {
   /* Navbar */
   .navbar {
     background-color: var(--color-primary-300);
+  }
+
+  /* Footer */
+  .footer {
+    background-color: var(--color-primary-700);
+  }
+
+  /* Catalog */
+  .catalog {
+    border-top: 1px solid var(--color-primary-200);
+  }
+
+  /* Filter divider */
+  .filter-divider {    
+    background-color: var(--color-primary-800)
   }
 }

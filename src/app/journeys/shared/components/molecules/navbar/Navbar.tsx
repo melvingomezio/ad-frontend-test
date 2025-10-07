@@ -12,7 +12,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onIconClick,
 }) => {
   return (
-    <nav className="navbar flex justify-between items-center px-32 py-5">
+    <nav className="navbar flex justify-between items-center px-4 md:px-8 lg:px-32 py-5">
       <div className="cursor-pointer" onClick={onTextClick}>
         <Heading variant="h2" color="primary600" fontWeight="bold">
           {text}

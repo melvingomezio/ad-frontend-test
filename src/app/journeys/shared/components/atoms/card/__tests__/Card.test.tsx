@@ -7,10 +7,10 @@ describe('Card', () => {
     expect(screen.getByText('Card Content')).toBeInTheDocument();
   });
 
-  it('applies card class', () => {
-    render(<Card>Card</Card>);
+  it('applies custom className when provided', () => {
+    render(<Card className="custom-card">Card</Card>);
     const card = screen.getByText('Card');
-    expect(card).toHaveClass('card');
+    expect(card).toHaveClass('custom-card');
   });
 
   it('calls onClick when clicked', () => {
